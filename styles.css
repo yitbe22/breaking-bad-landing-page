@@ -288,3 +288,64 @@ nav{
     color: var(--white);
     margin-bottom: 2rem;
 }
+
+#quotes{
+    background-color: var(--bg);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-rotator {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.quote-label{
+  color: var(--green);
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.quote-text{
+    color: var(--white);
+    font-size: 30px;
+    line-height: 1.4;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    transition: opacity 0.4s ease;
+}
+
+.quote-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 16px;
+}
+
+.quote-author{
+   color: var(--gold);
+   font-size: 18px;
+}
+
+.quote-dots {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.quote-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2e3a24;
+}
+
+.quote-dots span.active {
+  background: #4a7c2f;
+}
