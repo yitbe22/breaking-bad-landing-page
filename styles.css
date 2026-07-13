@@ -102,6 +102,14 @@ nav{
     width: 100%;
 }
 
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu{
+    display: none;
+}
+
 
 #logo img{
     padding-top: 0.4rem;
@@ -288,14 +296,18 @@ nav{
     margin-top: 0.5rem;
 }
 
-.section-heading{
-    color: var(--white);
-    margin-bottom: 2rem;
+.title-label{
+  text-align: center;
+  color: var(--green);
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
 }
 
 #quotes{
     background-color: var(--bg);
-    min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -306,14 +318,6 @@ nav{
 .quote-rotator {
   padding: 80px 20px;
   text-align: center;
-}
-
-.quote-label{
-  color: var(--green);
-  font-size: 16px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 28px;
 }
 
 .quote-text{
@@ -462,7 +466,7 @@ nav{
 
 }
 
-#gallary{
+#gallery{
     width: min(1200px, 90%);
     margin: 0 auto;
     display: grid;
@@ -470,7 +474,7 @@ nav{
     gap: 20px;
 }
 
-#gallary img{
+#gallery img{
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -479,7 +483,7 @@ nav{
     transition: transform .3s ease;
 }
 
-#gallary img:hover{
+#gallery img:hover{
     transform: scale(1.03);
 }
 
@@ -518,7 +522,7 @@ nav{
 }
 
 #footer{
-    height: 70vh;
+    padding-top: 40px;
     width: 100%;
     color: var(--white);
 }
@@ -532,7 +536,8 @@ nav{
 
 .footer-brand p{
     font-size: 24px;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -557,14 +562,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 65vh;
+    min-height: 65vh;
     margin: 10px 40px;
 }
-
-.footer-links{
-    margin-right: 5rem;
-}
-
 
 .footer-links h3{
      font-size: 12px;
@@ -604,10 +604,58 @@ nav{
 .footer-bottom p{
     margin: 0;
     max-width: 600px;
+    flex: 1;
 }
 
 
-@media (max-width: 768px){
+
+@media (max-width: 1024px) {
+
+ }
+
+@media (max-width: 768px) {
+    .hero-text{
+        font-size: 1.8rem;
+    }
+
+    .menu {
+        display: block;
+        color: var(--green);
+    }
+
+    .nav-links {
+        display: none;       
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 6%;
+        background: var(--bg);
+    }
+
+    .nav-links.active {
+        display: flex;         
+    }
+
+    .nav-links a {
+        position: relative;   
+        display: inline-block;
+        font-size: 18px;
+        color: var(--white);
+    }
+
+    #about{
+        flex-direction: column;
+    }
+
+    .footer-top{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        margin: 40px 20px;
+    }
+
     .footer-bottom{
         flex-direction: column;
         text-align: center;
@@ -615,8 +663,19 @@ nav{
         gap: 12px;
         font-size: 0.85rem;
     }
+
+    .footer-brand p{
+        font-size: 20px;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px;
+    }
 }
 
-
+@media (max-width: 480px) { }
+  
 
 

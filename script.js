@@ -49,10 +49,17 @@ setInterval(() => {
 }, 4000);
 
 
-const galleryImages = document.querySelectorAll("#gallary img");
+const galleryImages = document.querySelectorAll("#gallery img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".close");
+const menuBtn = document.querySelector(".menu");
+const navbar = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", ()=> {
+    navbar.classList.toggle("active");
+    menuBtn.classList.toggle("fa-x");
+})
 
 galleryImages.forEach(img => {
      img.addEventListener("click", (e)=>{
@@ -78,6 +85,8 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+
+
 /* scroll animation */
 const sr = ScrollReveal({
     distance: "40px",
@@ -87,10 +96,13 @@ const sr = ScrollReveal({
 
 });
 
-sr.reveal("nav li", {
-  origin: "top",
-  interval: 100
-});
+if (window.innerWidth > 768) {
+    sr.reveal("nav li", {
+    origin: "top",
+    interval: 100
+    });
+}
+
 
 sr.reveal("#logo", {
   origin: "left",
@@ -133,9 +145,18 @@ sr.reveal("#trailer", {
     delay: 300
 });
 
-sr.reveal(".card", {
-    origin: "bottom",
-    delay: 300,
-    interval: 100
+
+if (window.innerWidth > 768){
+     sr.reveal(".card", {
+     origin: "bottom",
+     delay: 300,
+     interval: 100
 });
+} else{
+        sr.reveal(".card1", {
+        origin: "bottom",
+        delay: 300,
+    });
+}
+
 
